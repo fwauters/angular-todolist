@@ -1,2 +1,23 @@
-<h2>My tasks</h2>
 
+<section>
+
+  <h2>My tasks</h2>
+
+  <table id="todolist">
+    <tr>
+      <th class="task">Task</th>
+      <th class="createdAt">Created At</th>
+      <th class="isDone">Done ?</th>
+    </tr>
+    <tr *ngFor="let task of todolist | async"
+        [class.selected]="task === selectedTask"
+        (click)="onSelect(task)">
+      <td class="task">{{ task.task }}</td>
+      <td class="createdAt">{{ getDate(task.createdAt) }}</td>
+      <td class="isDone"><input type="checkbox"></td>
+    </tr>
+  </table>
+
+</section>
+
+<app-task [task]="selectedTask"></app-task>

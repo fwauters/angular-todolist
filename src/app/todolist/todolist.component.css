@@ -1,0 +1,32 @@
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#todolist {
+  width: 90%;
+  text-align: center;
+}
+
+#todolist th {
+  padding: 10px;
+  background-color: #4caf50;
+}
+
+#todolist td {
+  padding: 8px;
+}
+
+#todolist tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#todolist tr:hover {
+  background-color: #ddd;
+}
+
+.task {
+  width: 50%;
+}

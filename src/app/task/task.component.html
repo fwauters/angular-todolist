@@ -1,0 +1,12 @@
+
+<div *ngIf="task">
+
+  <h2>{{ task.task | uppercase }} Details</h2>
+  <div><span>date: </span>{{task.createdAt}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="task.task" placeholder="name"/>
+    </label>
+  </div>
+
+</div>
