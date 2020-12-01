@@ -3,11 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { TodolistComponent } from './todolist/todolist.component';
-import { TaskComponent } from './task/task.component';
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -23,12 +18,21 @@ const firebaseConfig = {
   appId: "1:252832156468:web:3d08c7bb19710ba3d8f361"
 };
 
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './views/navbar/navbar.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { TodolistComponent } from './views/todolist/todolist.component';
+import { TaskComponent } from './views/task/task.component';
+import { AddTaskFormComponent } from './views/add-task-form/add-task-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    TodolistComponent,
+    NavbarComponent,
     DashboardComponent,
-    TaskComponent
+    TodolistComponent,
+    TaskComponent,
+    AddTaskFormComponent
   ],
   imports: [
     BrowserModule,

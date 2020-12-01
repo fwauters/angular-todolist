@@ -1,0 +1,15 @@
+
+<section *ngIf="task">
+
+  <h3>Details</h3>
+
+  <div class="taskBg">
+    <div class="item"><span>date: </span>{{task.createdAt}}</div>
+    <div class="item">
+      <label>name:
+        <input [(ngModel)]="task.task" placeholder="name"/>
+      </label>
+    </div>
+  </div>
+
+</section>

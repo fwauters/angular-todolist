@@ -9,12 +9,10 @@
       <th class="createdAt">Created At</th>
       <th class="isDone">Done ?</th>
     </tr>
-    <tr *ngFor="let task of todolist | async"
-        [class.selected]="task === selectedTask"
-        (click)="onSelect(task)">
+    <tr *ngFor="let task of todolist" (click)="onSelect(task)">
       <td class="task">{{ task.task }}</td>
-      <td class="createdAt">{{ getDate(task.createdAt) }}</td>
-      <td class="isDone"><input type="checkbox"></td>
+      <td class="createdAt">{{ task.createdAt }}</td>
+      <td class="isDone"><input type="checkbox" [checked]="task.isDone"></td>
     </tr>
   </table>
 
