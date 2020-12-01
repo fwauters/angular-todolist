@@ -17,13 +17,13 @@ export class TodolistService {
     return this.db.collection('todolist').valueChanges();
   }
 
-  addTask(id, task): any {
-    this.db.collection('todolist').doc(id).set(
+  addTask(id: number, task: string): any {
+    this.db.collection('todolist').doc(id.toString()).set(
       {
         createdAt: this.timestampService.getNow(true),
         isDone: false,
         task: task,
-        timeStamp: this.timestampService.getNow(false)
+        timeStamp: id
       }
     ).then(() => {
       console.log('Task sucessfully added to the DB !');
@@ -33,7 +33,16 @@ export class TodolistService {
   }
 
   generateId() {
-    let id = this.timestampService.getNow(false).toString();
+    let id = this.timestampService.getNow(false);
     return id;
+  }
+
+  deleteTask(id: number) {
+    this.db.collection('todolist').doc(id.toString()).delete()
+    .then(() => {
+      console.log('Task sucessfully deleted from the DB !');
+    }).catch((error) => {
+      console.log('Error: ' + error);
+    });
   }
 }

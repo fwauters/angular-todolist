@@ -17,8 +17,8 @@ export class AddTaskFormComponent implements OnInit {
 
   }
 
-  sendTask(): any {
+  sendTask() {
     let id = this.todolistService.generateId();
-    this.todolistService.addTask(id, this.newTask);
+    this.todolistService.addTask(Number(id), this.newTask);
   }
 }

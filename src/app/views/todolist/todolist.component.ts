@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Task } from 'src/app/models/task';
 import { TodolistService } from '../../controllers/todolist.service';
-import { TimestampService } from '../../controllers/timestamp.service';
 
 @Component({
   selector: 'app-todolist',
@@ -10,30 +10,23 @@ import { TimestampService } from '../../controllers/timestamp.service';
 })
 export class TodolistComponent implements OnInit {
 
-  todolist: any;
-  selectedTask: any;
+  todolist: Task[];
+  selectedTask: Task;
 
-  constructor(
-    private todolistService: TodolistService,
-    private timestampService: TimestampService) { }
+  constructor(private todolistService: TodolistService) { }
 
   ngOnInit() {
     this.getTodolist();
-    console.log(this.timestampService.getNow(true));
   }
 
   getTodolist() {
     this.todolistService.getList().subscribe(data => {
-      this.todolist = data;
       console.log(data);
+      this.todolist = data;
     });
   }
 
-  formatDate(timestamp) {
-    return this.timestampService.formatStamp(timestamp);
-  }
-
-  onSelect(task): void {
+  onSelect(task: Task) {
     this.selectedTask = task;
   }
 }
