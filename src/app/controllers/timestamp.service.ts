@@ -28,15 +28,4 @@ export class TimestampService {
     (n.length > 1) ? n : n = '0' + n;
     return n;
   }
-
-  formatDate(fireTimeStamp) {
-    const date = new Date(fireTimeStamp*1000);
-    let day = date.getUTCDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear() - 1969;
-    let hour = date.getHours();
-    let minutes = date.getMinutes().toString();
-    (minutes.length > 1) ? minutes : minutes = '0' + minutes;
-    return day + '/' + month + '/' + year + ' - ' + hour + ':' + minutes;
-  }
 }

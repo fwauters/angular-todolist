@@ -17,6 +17,7 @@ section {
 
 #todolist td {
   padding: 8px;
+  cursor: pointer;
 }
 
 #todolist tr {

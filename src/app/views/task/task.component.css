@@ -5,16 +5,53 @@ h3 {
 
 .taskBg {
   width: 90%;
-  height: 80px;
   margin-left: 5%;
+  padding-top: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: #fff;
-  border-radius: 2px;
+  border: 5px solid #4caf50;
+  box-shadow: 0 2px 5px grey;
 }
 
-.item {
-  margin: 5px;
+.resizeBox {
+  width: 90%;
+  margin: 10px 0 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.labels {
+  margin-right: 20px;
+}
+
+.detailsBtns {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.detailsBtns form button {
+  cursor: pointer;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 12px;
+  text-decoration: none;
+  border:1px solid black;
+  margin: 15px;
+}
+
+.detailsBtns form button:active {
+  position: relative;
+  top: 1px;
+}
+
+.updateBtn {
+  background-color:#DAA520;
+}
+
+.deleteBtn {
+  background-color: #B22222;
 }

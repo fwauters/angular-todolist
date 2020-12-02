@@ -16,6 +16,10 @@ export class TaskComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  updateElement() {
+    this.todolistService.updateTask(this.task);
+  }
+
   deleteElement(id: number) {
     this.todolistService.deleteTask(id);
   }
