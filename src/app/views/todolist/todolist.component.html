@@ -9,14 +9,22 @@
 
   <table id="todolist">
     <tr>
-      <th class="task">Task</th>
+      <th>X</th>
+      <th class="task">Task description</th>
       <th class="createdAt">Created At</th>
-      <th class="isDone">Done ?</th>
+      <th>Done ?</th>
     </tr>
     <tr *ngFor="let task of todolist" (click)="onSelect(task)">
+      <td>
+        <form (ngSubmit)="deleteElement(task.timeStamp)">
+          <button type="submit" class="btn deleteBtn">
+            <i class="far fa-trash-alt"></i>
+          </button>
+        </form>
+      </td>
       <td class="task">{{ task.task }}</td>
       <td class="createdAt">{{ task.createdAt }}</td>
-      <td class="isDone">{{ task.isDone }}</td>
+      <td>{{ task.isDone }}</td>
     </tr>
   </table>
 

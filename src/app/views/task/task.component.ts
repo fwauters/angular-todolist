@@ -19,9 +19,4 @@ export class TaskComponent implements OnInit {
   updateElement() {
     this.todolistService.updateTask(this.task);
   }
-
-  deleteElement(id: number) {
-    this.todolistService.deleteTask(id);
-  }
-
 }

@@ -3,4 +3,30 @@
 body {
   background-color: rgb(179, 190, 201);
   font-family: 'Ubuntu', sans-serif;
+  font-size: large;
+}
+
+.textInput {
+  font-size: 16px;
+}
+
+.btn {
+  cursor: pointer;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 8px;
+  text-decoration: none;
+  border:1px solid black;
+  margin: 15px;
+  transition: ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
 }

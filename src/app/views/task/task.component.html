@@ -1,15 +1,15 @@
 
-<section *ngIf="task">
-
-  <h3>{{ task.task }} - details</h3>
+<section *ngIf="task" class="taskBox">
 
   <div class="taskBg">
 
-    <div class="resizeBox"><span class="labels">Created at: </span>{{task.createdAt}}</div>
+    <h3>{{ task.task }} - details</h3>
+
+    <div class="resizeBox"><span class="labels">Created at: </span>{{ task.createdAt }}</div>
 
     <label class="resizeBox"><span class="labels">Task:</span>
-      <input type="text" placeholder="task description"
-        [(ngModel)]="task.task" />
+      <input type="text" class="textInput"
+        [(ngModel)]="task.task" placeholder="task description" />
     </label>
 
     <label class="resizeBox"><span class="labels">Is Done ?</span>
@@ -17,17 +17,9 @@
         [(ngModel)]="task.isDone" />
     </label>
 
-    <div class="detailsBtns">
-
-      <form (ngSubmit)="updateElement()">
-        <button type="submit" class="updateBtn">Update</button>
-      </form>
-
-      <form (ngSubmit)="deleteElement(task.timeStamp)">
-        <button type="submit" class="deleteBtn">Delete</button>
-      </form>
-
-    </div>
+    <form (ngSubmit)="updateElement()">
+      <button type="submit" class="btn updateBtn">Update</button>
+    </form>
 
   </div>
 

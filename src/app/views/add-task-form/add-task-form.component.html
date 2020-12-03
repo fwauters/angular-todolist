@@ -1,5 +1,6 @@
 
 <form (ngSubmit)="sendTask()">
-  <input [(ngModel)]="newTask" name="newTask" placeholder="Enter a task here">
-  <button type="submit">Submit</button>
+  <input type="text" class="textInput"
+    [(ngModel)]="newTask" placeholder="Enter a new task here" />
+  <button type="submit" class="btn addBtn">Add Task</button>
 </form>

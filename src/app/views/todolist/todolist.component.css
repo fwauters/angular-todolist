@@ -8,6 +8,8 @@ section {
 #todolist {
   width: 90%;
   text-align: center;
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px grey;
 }
 
 #todolist th {
@@ -32,6 +34,15 @@ section {
   background-color: #ddd;
 }
 
+.deleteBtn {
+  background-color: #B22222;
+}
+
 .task {
-  width: 50%;
+  width: 40%;
+  border-left: 2px solid rgb(179, 190, 201);
+}
+
+.task, .createdAt {
+  border-right: 2px solid rgb(179, 190, 201);
 }

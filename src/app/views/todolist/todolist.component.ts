@@ -29,4 +29,8 @@ export class TodolistComponent implements OnInit {
   onSelect(task: Task) {
     this.selectedTask = task;
   }
+
+  deleteElement(id: number) {
+    this.todolistService.deleteTask(id);
+  }
 }
