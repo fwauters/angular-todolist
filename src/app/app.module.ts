@@ -24,6 +24,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { TodolistComponent } from './views/todolist/todolist.component';
 import { TaskComponent } from './views/task/task.component';
 import { AddTaskFormComponent } from './views/add-task-form/add-task-form.component';
+import { RegisterComponent } from './views/register/register.component';
+import { LoginComponent } from './views/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AddTaskFormComponent } from './views/add-task-form/add-task-form.compon
     DashboardComponent,
     TodolistComponent,
     TaskComponent,
-    AddTaskFormComponent
+    AddTaskFormComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

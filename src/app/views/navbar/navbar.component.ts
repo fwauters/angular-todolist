@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { LogService } from '../../controllers/log.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  isLogged = sessionStorage.getItem('isLogged');
+
+  constructor(private logService: LogService) { }
 
   ngOnInit(): void {
+  }
+
+  userLogout() {
+    this.logService.logout();
   }
 
 }

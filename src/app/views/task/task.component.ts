@@ -11,12 +11,14 @@ import { TodolistService } from '../../controllers/todolist.service';
 export class TaskComponent implements OnInit {
   @Input() task: Task;
 
+  user = sessionStorage.getItem('user');
+
   constructor(private todolistService: TodolistService) { }
 
   ngOnInit(): void {
   }
 
   updateElement() {
-    this.todolistService.updateTask(this.task);
+    this.todolistService.updateTask(this.user, this.task);
   }
 }

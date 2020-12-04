@@ -10,6 +10,7 @@ import { TodolistService } from '../../controllers/todolist.service';
 export class AddTaskFormComponent implements OnInit {
 
   newTask: string;
+  user = sessionStorage.getItem('user');
 
   constructor(private todolistService: TodolistService) { }
 
@@ -19,6 +20,6 @@ export class AddTaskFormComponent implements OnInit {
 
   sendTask() {
     let id = this.todolistService.generateId();
-    this.todolistService.addTask(Number(id), this.newTask);
+    this.todolistService.addTask(this.user, Number(id), this.newTask);
   }
 }

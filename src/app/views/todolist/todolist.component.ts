@@ -12,15 +12,19 @@ export class TodolistComponent implements OnInit {
 
   todolist: Task[];
   selectedTask: Task;
+  isLogged = sessionStorage.getItem('isLogged');
+  user = sessionStorage.getItem('user');
 
   constructor(private todolistService: TodolistService) { }
 
   ngOnInit() {
-    this.getTodolist();
+    if (this.user) {
+      this.getTodolist();
+    }
   }
 
   getTodolist() {
-    this.todolistService.getList().subscribe(data => {
+    this.todolistService.getList(this.user).subscribe(data => {
       console.log(data);
       this.todolist = data;
     });
@@ -31,6 +35,6 @@ export class TodolistComponent implements OnInit {
   }
 
   deleteElement(id: number) {
-    this.todolistService.deleteTask(id);
+    this.todolistService.deleteTask(this.user, id);
   }
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { Task } from '../models/task';
 
+import { Task } from '../models/task';
 import { TimestampService } from './timestamp.service';
 
 @Injectable({
@@ -19,12 +19,12 @@ export class TodolistService {
     return id;
   }
 
-  getList(): Observable<any[]> {
-    return this.db.collection('todolist').valueChanges();
+  getList(user): Observable<any[]> {
+    return this.db.collection('users').doc(user).collection('todolist').valueChanges();
   }
 
-  addTask(id: number, task: string) {
-    this.db.collection('todolist').doc(id.toString()).set(
+  addTask(user, id: number, task: string) {
+    this.db.collection('users').doc(user).collection('todolist').doc(id.toString()).set(
       {
         createdAt: this.timestampService.getNow(true),
         isDone: false,
@@ -38,8 +38,8 @@ export class TodolistService {
     });
   }
 
-  deleteTask(id: number) {
-    this.db.collection('todolist').doc(id.toString()).delete()
+  deleteTask(user, id: number) {
+    this.db.collection('users').doc(user).collection('todolist').doc(id.toString()).delete()
     .then(() => {
       console.log('Task sucessfully deleted from the DB !');
     }).catch((error) => {
@@ -47,8 +47,8 @@ export class TodolistService {
     });
   }
 
-  updateTask(task: Task) {
-    this.db.collection('todolist').doc(task.timeStamp.toString()).set(
+  updateTask(user, task: Task) {
+    this.db.collection('users').doc(user).collection('todolist').doc(task.timeStamp.toString()).set(
       {
         createdAt: task.createdAt,
         isDone: task.isDone,

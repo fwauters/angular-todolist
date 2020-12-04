@@ -1,5 +1,13 @@
 
 <nav id="navbar">
-  <a routerLink="/dashboard" class="navBtn">Dashboard</a>
-  <a routerLink="/todolist" class="navBtn">Todolist</a>
+
+  <a *ngIf="isLogged" routerLink="/dashboard" class="navBtn">Dashboard</a>
+  <a *ngIf="isLogged" routerLink="/todolist" class="navBtn">Todolist</a>
+  <a *ngIf="isLogged; else elseBlock" (click)="userLogout()" class="navBtn" >Logout</a>
+
+  <ng-template #elseBlock>
+      <a routerLink="/register" class="navBtn">Register</a>
+      <a routerLink="/login" class="navBtn">Login</a>
+  </ng-template>
+
 </nav>
