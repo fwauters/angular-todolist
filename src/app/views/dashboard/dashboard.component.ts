@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   isLogged = sessionStorage.getItem('isLogged');
+  firstname = sessionStorage.getItem('firstname');
 
   constructor() { }
 

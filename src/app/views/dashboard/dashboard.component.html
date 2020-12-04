@@ -1,4 +1,17 @@
 
-<section *ngIf="isLogged">
-  <p>Coming soon !</p>
+<section class="dashboard" *ngIf="isLogged">
+
+  <h2>Dashboard</h2>
+
+  <div class="dashBg">
+
+    <h3>Welcome {{ firstname }} !</h3>
+
+    <p>For now the dashboard is empty but I'll add some stuff soon 😉</p>
+
+    <p>And don't worry, everything else is working just fine, you can start or update
+      <a routerLink="/todolist" class="inlineLink">your todo list right here</a>.</p>
+
+  </div>
+
 </section>

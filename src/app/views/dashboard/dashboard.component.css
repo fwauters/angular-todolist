@@ -1,3 +1,22 @@
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashBg {
+  background-color: #fff;
+  width: 90vw;
+  height: 500px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 2px 5px grey;
+}
+
 p {
-  text-align: center;
+  margin: 20px;
 }

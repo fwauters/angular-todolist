@@ -20,7 +20,8 @@ export class LogService {
         console.log('User sucessfully connected !');
         sessionStorage.setItem('isLogged', 'true');
         sessionStorage.setItem('user', email);
-        window.location.replace("/dashboard");
+        sessionStorage.setItem('firstname', this.data.firstname);
+        window.location.replace('/dashboard');
       }
       else {
         console.log('Wrong password !');

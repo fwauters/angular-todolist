@@ -1,8 +1,13 @@
 
-<form (ngSubmit)="userLogin()">
-  <label>Email: <input type="email" name="email" 
-    [(ngModel)]="email" /></label>
-  <label>Password: <input type="password" name="password" 
-    [(ngModel)]="password" /></label>
-  <button type="submit">Login</button>
-</form>
+<section class="flexColCenter">
+
+  <form (ngSubmit)="userLogin()">
+    <h3>Login</h3>
+    <label>Email: <input type="email" name="email" 
+      [(ngModel)]="email" /></label>
+    <label>Password: <input type="password" name="password" 
+      [(ngModel)]="password" /></label>
+    <button type="submit" class="btn loginBtn">Login</button>
+  </form>
+
+</section>

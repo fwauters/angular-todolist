@@ -6,7 +6,7 @@ section {
 }
 
 #todolist {
-  width: 90%;
+  width: 90vw;
   text-align: center;
   border-collapse: collapse;
   box-shadow: 0 2px 5px grey;
@@ -14,7 +14,8 @@ section {
 
 #todolist th {
   padding: 10px;
-  background-color: #4caf50;
+  background-color:#282c34;
+  color: #fff;
 }
 
 #todolist td {
