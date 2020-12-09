@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-
 import { AngularFirestore } from '@angular/fire/firestore';
+
+import { HashService } from './hash.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +10,16 @@ export class LogService {
 
   data;
 
-  constructor(private db: AngularFirestore) { }
+  constructor(
+    private db: AngularFirestore,
+    private hashService: HashService) { }
 
   login(email, password) {
     let userData = this.db.collection('users').doc(email).valueChanges();
     userData.subscribe(data => {
-      console.log(data);
       this.data = data;
-      if (this.data.password === password) {
+      let check = this.hashService.compare(password, this.data.password);
+      if (check === true) {
         console.log('User sucessfully connected !');
         sessionStorage.setItem('isLogged', 'true');
         sessionStorage.setItem('user', email);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { RegisterService } from '../../controllers/register.service';
+import { HashService } from '../../controllers/hash.service';
 import { User } from '../../models/user';
 
 @Component({
@@ -15,7 +16,9 @@ export class RegisterComponent implements OnInit {
   email;
   password;
 
-  constructor(private registerService: RegisterService) { }
+  constructor(
+    private registerService: RegisterService,
+    private hashService: HashService) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +28,7 @@ export class RegisterComponent implements OnInit {
       this.firstname,
       this.lastname,
       this.email,
-      this.password
+      this.hashService.hash(this.password)
     );
   }
 
