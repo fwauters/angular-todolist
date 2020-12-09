@@ -1,27 +1,26 @@
-# AngularTodolist
+# Angular Todolist
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+:construction: **This project is a work in progress !** :construction:
 
-## Development server
+:construction: **This app isn't hosted yet !** :construction:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Concept
 
-## Code scaffolding
+Initially I wanted to make an application that allows users to create their own databases.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+But having never worked with Angular before, I chose to start with a personal todolist to learn how it works.
 
-## Build
+## Content
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+This is a personal todolist-app with a user session system. You can register (don't worry, your password is hashed with [bcyptjs](https://www.npmjs.com/package/bcryptjs)) and build your own todolist. Everything is saved in Firestore so you can logout/login as you please.
 
-## Running unit tests
+## Context
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+I made this app to learn to work with Angular and TypeScript in preparation for my internship.
 
-## Running end-to-end tests
+### Tech
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- HTML / CSS
+- Node JS
+- Angular / TypeScript
+- Cloud Firestore
