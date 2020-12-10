@@ -1,15 +1,22 @@
 
-<section class="register">
-  <form (ngSubmit)="registerUser()">
-    <h3>Register</h3>
-    <label>Firstname: <input type="text" name="firstname" 
-      [(ngModel)]="firstname" /></label>
-    <label>Lastname: <input type="text" name="lastname" 
-      [(ngModel)]="lastname" /></label>
-    <label>Email: <input type="email" name="email" 
-      [(ngModel)]="email" /></label>
-    <label>Password: <input type="password" name="password" 
-      [(ngModel)]="password" /></label>
-    <button type="submit" class="btn registerBtn">Submit</button>
-  </form>
-</section>
+<div *ngIf="isLogged; else elseBlock"></div>
+
+<ng-template #elseBlock>
+  <section class="register">
+    <form (ngSubmit)="registerUser()">
+      <h3>Register</h3>
+      <label>Firstname: <input type="text" name="firstname" 
+        [(ngModel)]="firstname" /></label>
+      <label>Lastname: <input type="text" name="lastname" 
+        [(ngModel)]="lastname" /></label>
+      <label>Email: <input type="email" name="email"
+        [(ngModel)]="email" /></label>
+      <label>Password: <input type="password" name="password" 
+        [(ngModel)]="pass1" /></label>
+      <label>Confirm password: <input type="password" name="password" 
+        [(ngModel)]="pass2" /></label>
+        <div *ngIf="errorMsg"><p id="error">{{ errorMsg }}</p></div>
+      <button type="submit" class="btn registerBtn">Submit</button>
+    </form>
+  </section>
+</ng-template>

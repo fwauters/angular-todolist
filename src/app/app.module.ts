@@ -26,6 +26,7 @@ import { TaskComponent } from './views/task/task.component';
 import { AddTaskFormComponent } from './views/add-task-form/add-task-form.component';
 import { RegisterComponent } from './views/register/register.component';
 import { LoginComponent } from './views/login/login.component';
+import { WelcomeComponent } from './views/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoginComponent } from './views/login/login.component';
     TaskComponent,
     AddTaskFormComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

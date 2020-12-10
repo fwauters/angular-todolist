@@ -6,7 +6,7 @@
 
 ## Concept
 
-Initially I wanted to make an application that allows users to create their own databases. But having never worked with Angular before, I chose to start with a personal todolist app to learn how it works.
+Initially I wanted to make an application that allows users to create their own databases. But having never worked with Angular before, I chose to start with a personal todolist app to learn how to.
 
 ## Content
 

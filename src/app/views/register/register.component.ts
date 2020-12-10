@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { RegisterService } from '../../controllers/register.service';
 import { HashService } from '../../controllers/hash.service';
-import { User } from '../../models/user';
 
 @Component({
   selector: 'app-register',
@@ -11,10 +10,13 @@ import { User } from '../../models/user';
 })
 export class RegisterComponent implements OnInit {
 
+  isLogged = sessionStorage.getItem('isLogged');
   firstname;
   lastname;
   email;
-  password;
+  pass1;
+  pass2;
+  errorMsg;
 
   constructor(
     private registerService: RegisterService,
@@ -24,12 +26,30 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser() {
-    this.registerService.newUser(
-      this.firstname,
-      this.lastname,
-      this.email,
-      this.hashService.hash(this.password)
-    );
+    let mailCheck = this.validateEmail(this.email);
+    if (mailCheck) {
+      if (this.pass1 === this.pass2) {
+        this.registerService.newUser(
+          this.firstname,
+          this.lastname,
+          this.email,
+          this.hashService.hash(this.pass1)
+        );
+      }
+      else {
+        this.errorMsg = "You enter two differents passwords";
+      }
+    }
+    else {
+      this.errorMsg = "This email is not valid";
+    }
+  }
+
+  validateEmail(email) {
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
+      return (true)
+    }
+    else {return (false)}
   }
 
 }
