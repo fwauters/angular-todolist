@@ -1,7 +1,7 @@
 
 <section *ngIf="task" class="taskBox">
 
-  <div class="taskBg">
+  <div class="taskBg flexColCenter">
 
     <h3>{{ task.task }} - details</h3>
 
@@ -12,7 +12,7 @@
         [(ngModel)]="task.task" placeholder="task description" />
     </label>
 
-    <label class="resizeBox"><span class="labels">Is Done ?</span>
+    <label class="resizeBox"><span class="labels">Done ?</span>
       <input type="checkbox" class="checkbox" 
         [(ngModel)]="task.isDone" />
     </label>

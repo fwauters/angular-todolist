@@ -2,9 +2,17 @@
 <div *ngIf="isLogged; else elseBlock"></div>
 
 <ng-template #elseBlock>
-<section>
+<section class="welcome flexColCenter">
 
-  <p>welcome works!</p>
+  <h3>Welcome !</h3>
+
+  <div class="innerWelcome flexColCenter">
+    <p>This is a web-app that allows your to create a  todolist.
+      <br />
+      Feel free to use it as you please, your list is saved and updated in real time.
+    </p>
+
+  </div>
 
 </section>
 </ng-template>

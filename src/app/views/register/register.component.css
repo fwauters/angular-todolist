@@ -7,9 +7,6 @@
 form {
   width: 70%;
   margin: 40px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #fff;
   box-shadow: 0 2px 5px grey;
 }

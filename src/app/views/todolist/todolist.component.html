@@ -1,5 +1,5 @@
 
-<section *ngIf="isLogged">
+<section *ngIf="isLogged" class="flexColCenter">
 
   <h2>Add a new task</h2>
 
@@ -11,7 +11,7 @@
     <tr>
       <th>X</th>
       <th class="task">Task description</th>
-      <th class="createdAt">Created At</th>
+      <th class="createdAt">Created at</th>
       <th>Done ?</th>
     </tr>
     <tr *ngFor="let task of todolist" (click)="onSelect(task)">

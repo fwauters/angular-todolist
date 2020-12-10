@@ -2,7 +2,7 @@
 <div *ngIf="isLogged; else elseBlock"></div>
 
 <ng-template #elseBlock>
-  <section class="register">
+  <section class="register flexColCenter">
     <form (ngSubmit)="registerUser()">
       <h3>Register</h3>
       <label>Firstname: <input type="text" name="firstname" 
