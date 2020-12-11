@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('isLogged', 'true');
           sessionStorage.setItem('user', this.email);
           sessionStorage.setItem('firstname', this.data.firstname);
-          window.location.replace('/dashboard');
+          window.location.replace('/');
         }
         else {
           console.log('Wrong password...');

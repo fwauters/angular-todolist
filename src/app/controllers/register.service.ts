@@ -21,7 +21,7 @@ export class RegisterService {
       console.log('User sucessfully added to the DB !');
       sessionStorage.setItem('isLogged', 'true');
       sessionStorage.setItem('user', email);
-      window.location.replace("/dashboard");
+      window.location.replace('/');
     }).catch((error) => {
       console.log('Error: ' + error);
     });
