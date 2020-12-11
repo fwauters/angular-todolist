@@ -1,16 +1,19 @@
 
-<section class="dashboard" *ngIf="isLogged">
+<section *ngIf="isLogged" class="flexColCenter">
 
   <h2>Dashboard</h2>
 
-  <div class="dashBg">
+  <div class="bigBox flexColCenter">
 
     <h3>Welcome {{ firstname }} !</h3>
 
     <p>For now the dashboard is quite empty but I'll add some stuff soon 😉</p>
 
-    <p>And don't worry, everything else is working fine, you can start or update
-      <a routerLink="/todolist" class="inlineLink">your todo list right here</a>.</p>
+    <p>Don't worry, everything else is working fine !</p>
+
+    <p>You can start or update
+    <a routerLink="/todolist" class="inlineLink">your todo list right here</a>.
+    </p>
 
   </div>
 

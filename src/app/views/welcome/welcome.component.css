@@ -1,11 +1,9 @@
 
 .welcome {
-  width: 90vw;
-  background-color: #fff;
-  margin: 40px 0;
-  box-shadow: 0 2px 5px grey;
+  margin-top: 40px;
 }
 
-.innerWelcome {
-  padding: 10px;
+p {
+  margin: 0 25px;
+  margin-top: 25px;
 }
