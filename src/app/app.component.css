@@ -1,5 +1,21 @@
 
+.appBody {
+  width: 90vw;
+}
+
 h1 {
   text-align: center;
   margin: 25px;
+}
+
+@media (min-width: 1000px) {
+  .appBody {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 500px) {
+  .appBody {
+    min-width: 97vw;
+  }
 }
