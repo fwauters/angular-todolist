@@ -1,8 +1,10 @@
 # Angular Todolist
 
-:construction: **This project is a work in progress !** :construction:
+:white_check_mark: **This project is fully functional !** :white_check_mark:
 
-:construction: **This app isn't hosted yet !** :construction:
+*I may add some stuff in the futur, but for now everything works fine* :wink:
+
+You can check it by yourself on my website [@todolist.fwauters.be](https://todolist.fwauters.be).
 
 ## Concept
 
