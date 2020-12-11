@@ -11,10 +11,10 @@ import { HashService } from '../../controllers/hash.service';
 export class LoginComponent implements OnInit {
 
   isLogged = sessionStorage.getItem('isLogged');
-  email;
-  password;
-  data;
-  errorMsg;
+  email: string;
+  password: string;
+  data: any;
+  errorMsg: string;
 
   constructor(
     private logService: LogService,

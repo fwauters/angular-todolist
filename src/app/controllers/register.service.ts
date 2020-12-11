@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-
 import { AngularFirestore } from '@angular/fire/firestore';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class RegisterService {
 
   constructor(private db: AngularFirestore) { }
 
-  newUser(firstname, lastname, email, password) {
+  newUser(firstname: string, lastname: string, email: string, password: string) {
     this.db.collection('users').doc(email).set(
       {
         firstname: firstname,

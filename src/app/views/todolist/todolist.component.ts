@@ -32,6 +32,9 @@ export class TodolistComponent implements OnInit {
 
   onSelect(task: Task) {
     this.selectedTask = task;
+    document.getElementById("task").scrollIntoView({
+      behavior: 'smooth'
+    });
   }
 
   deleteElement(id: number) {

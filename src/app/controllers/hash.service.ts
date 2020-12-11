@@ -13,7 +13,7 @@ export class HashService {
     return bcrypt.hashSync(password, salt);
   }
 
-  compare(password, hash) {
+  compare(password: string, hash: string) {
     return bcrypt.compareSync(password, hash);
   }
 }

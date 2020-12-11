@@ -11,12 +11,12 @@ import { HashService } from '../../controllers/hash.service';
 export class RegisterComponent implements OnInit {
 
   isLogged = sessionStorage.getItem('isLogged');
-  firstname;
-  lastname;
-  email;
-  pass1;
-  pass2;
-  errorMsg;
+  firstname: string;
+  lastname: string;
+  email: string;
+  pass1: string;
+  pass2: string;
+  errorMsg: string;
 
   constructor(
     private registerService: RegisterService,
@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  validateEmail(email) {
+  validateEmail(email: string) {
     if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
       return (true)
     }

@@ -19,11 +19,11 @@ export class TodolistService {
     return id;
   }
 
-  getList(user): Observable<any[]> {
+  getList(user: string): Observable<any[]> {
     return this.db.collection('users').doc(user).collection('todolist').valueChanges();
   }
 
-  addTask(user, id: number, task: string) {
+  addTask(user: string, id: number, task: string) {
     this.db.collection('users').doc(user).collection('todolist').doc(id.toString()).set(
       {
         createdAt: this.timestampService.getNow(true),
@@ -38,7 +38,7 @@ export class TodolistService {
     });
   }
 
-  deleteTask(user, id: number) {
+  deleteTask(user: string, id: number) {
     this.db.collection('users').doc(user).collection('todolist').doc(id.toString()).delete()
     .then(() => {
       console.log('Task sucessfully deleted from the DB !');
@@ -47,7 +47,7 @@ export class TodolistService {
     });
   }
 
-  updateTask(user, task: Task) {
+  updateTask(user: string, task: Task) {
     this.db.collection('users').doc(user).collection('todolist').doc(task.timeStamp.toString()).set(
       {
         createdAt: task.createdAt,
