@@ -11,7 +11,7 @@
   box-shadow: 0 2px 5px grey;
 }
 
-.resizeBox {
+.taskElem {
   margin: 10px;
   display: flex;
   justify-content: center;
@@ -19,11 +19,6 @@
 
 .labels {
   margin-right: 20px;
-}
-
-.detailsBtns {
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .updateBtn {

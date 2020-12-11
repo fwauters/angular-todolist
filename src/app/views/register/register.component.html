@@ -2,21 +2,46 @@
 <div *ngIf="isLogged; else elseBlock"></div>
 
 <ng-template #elseBlock>
-  <section class="register flexColCenter">
-    <form (ngSubmit)="registerUser()">
+  <section class="flexRowCenter">
+
+    <form (ngSubmit)="registerUser()" name="registerForm" class="boxBg flexColCenter">
+
       <h3>Register</h3>
-      <label>Firstname: <input type="text" name="firstname" 
-        [(ngModel)]="firstname" /></label>
-      <label>Lastname: <input type="text" name="lastname" 
-        [(ngModel)]="lastname" /></label>
-      <label>Email: <input type="email" name="email"
-        [(ngModel)]="email" /></label>
-      <label>Password: <input type="password" name="password" 
-        [(ngModel)]="pass1" /></label>
-      <label>Confirm password: <input type="password" name="password" 
-        [(ngModel)]="pass2" /></label>
-        <div *ngIf="errorMsg"><p id="error">{{ errorMsg }}</p></div>
-      <button type="submit" class="btn registerBtn">Submit</button>
+
+      <div class="boxElem">
+        <label for="firstname">Firstname: </label>
+        <input type="text" name="firstname" [(ngModel)]="firstname" />
+      </div>
+
+      <div class="boxElem">
+        <label for="lastname">Lastname: </label>
+        <input type="text" name="lastname" [(ngModel)]="lastname" />
+      </div>
+
+      <div class="boxElem">
+        <label for="email">Email: </label>
+        <input type="email" name="email" [(ngModel)]="email" />
+      </div>
+
+      <div class="boxElem">
+        <label for="password1">Password: </label> 
+        <input type="password" name="password1" [(ngModel)]="pass1" />
+      </div>
+
+      <div class="boxElem">
+        <label for="password2">Confirm password: </label>
+        <input type="password" name="password2" [(ngModel)]="pass2" />
+      </div>
+
+      <div *ngIf="errorMsg" class="errorMsg">
+        <label for="registerForm">
+          <strong>{{ errorMsg }}</strong>
+        </label>
+      </div>
+
+      <button type="submit" class="btn">Register</button>
+
     </form>
+
   </section>
 </ng-template>

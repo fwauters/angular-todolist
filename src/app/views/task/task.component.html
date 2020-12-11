@@ -5,20 +5,25 @@
 
     <h3>{{ task.task }} - details</h3>
 
-    <div class="resizeBox"><span class="labels">Created at: </span>{{ task.createdAt }}</div>
+    <div class="taskElem">
+      <label for="createdAt" class="labels">Created at: </label>
+      <span name="createdAt">{{ task.createdAt }}</span>
+    </div>
 
-    <label class="resizeBox"><span class="labels">Task:</span>
-      <input type="text" class="textInput"
+    <div class="taskElem">
+      <label for="task" class="labels">Task: </label>
+      <input type="text" name="task" class="textInput"
         [(ngModel)]="task.task" placeholder="task description" />
-    </label>
+    </div>
 
-    <label class="resizeBox"><span class="labels">Done ?</span>
-      <input type="checkbox" class="checkbox" 
+    <div class="taskElem">
+      <label for="isDone" class="labels">Done ?</label>
+      <input type="checkbox" name="isDone" class="checkbox" 
         [(ngModel)]="task.isDone" />
-    </label>
+    </div>
 
     <form (ngSubmit)="updateElement()">
-      <button type="submit" class="btn updateBtn">Update</button>
+      <button type="submit" class="btn updateBtn">Update Task</button>
     </form>
 
   </div>

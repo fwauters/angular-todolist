@@ -32,6 +32,11 @@ h3 {
   color: #fff;
 }
 
+.flexRowCenter {
+  display: flex;
+  justify-content: center;
+}
+
 .flexColCenter {
   display: flex;
   flex-direction: column;
@@ -40,11 +45,13 @@ h3 {
 
 .textInput {
   font-size: 16px;
+  height: 25px;
 }
 
 .btn {
   cursor: pointer;
   color: #fff;
+  background-color: #282c34;
   font-size: 13px;
   font-weight: bold;
   padding: 6px 8px;
@@ -61,4 +68,23 @@ h3 {
 .btn:active {
   position: relative;
   top: 1px;
+}
+
+.boxBg {
+  width: 70%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px grey;
+}
+
+.boxElem {
+  margin-top: 15px;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.errorMsg {
+  color:#B22222;
+  text-align: center;
+  margin-top: 15px;
 }

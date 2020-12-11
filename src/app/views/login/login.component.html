@@ -2,20 +2,30 @@
 <div *ngIf="isLogged; else elseBlock"></div>
 
 <ng-template #elseBlock>
-  <section class="flexColCenter">
+  <section class="flexRowCenter">
 
-    <form (ngSubmit)="userLogin()">
+    <form (ngSubmit)="userLogin()" name="loginForm" class="boxBg flexColCenter">
+
       <h3>Login</h3>
-      <div>
+
+      <div class="boxElem">
         <label for="email">Email: </label>
-        <input type="email" name="email" [(ngModel)]="email" />
+        <input type="email" name="email" class="textInput" [(ngModel)]="email" />
       </div>
-      <div>
+
+      <div class="boxElem">
         <label for="password">Password: </label>
-        <input type="password" name="password" [(ngModel)]="password" />
+        <input type="password" name="password" class="textInput" [(ngModel)]="password" />
       </div>
-      <div *ngIf="errorMsg"><p id="error">{{ errorMsg }}</p></div>
-      <button type="submit" class="btn loginBtn">Login</button>
+
+      <div *ngIf="errorMsg" class="errorMsg">
+        <label for="loginForm">
+          <strong>{{ errorMsg }}</strong>
+        </label>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+
     </form>
 
   </section>

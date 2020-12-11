@@ -1,5 +1,5 @@
 
-#todolist {
+.todolist {
   width: 90vw;
   text-align: center;
   border-collapse: collapse;
@@ -7,26 +7,26 @@
   margin-bottom: 40px;
 }
 
-#todolist th {
+.todolist th {
   padding: 10px;
   background-color:#282c34;
   color: #fff;
 }
 
-#todolist td {
+.todolist td {
   padding: 8px;
   cursor: pointer;
 }
 
-#todolist tr {
+.todolist tr {
   background-color: #fff;
 }
 
-#todolist tr:nth-child(even) {
+.todolist tr:nth-child(even) {
   background-color: #eee;
 }
 
-#todolist tr:hover {
+.todolist tr:hover {
   background-color: #ddd;
 }
 
